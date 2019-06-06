@@ -72,7 +72,11 @@ public class TivaActivity extends BaseActivity implements NavigationView.OnNavig
         {
             try
             {
-                btSocket.getOutputStream().write("0".toString().getBytes());
+
+                Toast.makeText(getApplicationContext(), "Se envio: A", Toast.LENGTH_LONG).show();
+
+                //btSocket.getOutputStream().write("0".toString().getBytes());
+                btSocket.getOutputStream().write("A".toString().getBytes());
             }
             catch (IOException e)
             {

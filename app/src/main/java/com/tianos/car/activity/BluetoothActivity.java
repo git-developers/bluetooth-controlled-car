@@ -86,6 +86,8 @@ public class BluetoothActivity extends BaseActivity implements NavigationView.On
             startActivityForResult(turnBTon,1);
         }
 
+        ButterKnife.bind(this);
+
     }
 
     @OnClick(R.id.btnPaired)
