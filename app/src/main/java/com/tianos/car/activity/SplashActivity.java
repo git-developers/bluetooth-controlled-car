@@ -23,7 +23,8 @@ public class SplashActivity extends BaseActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
-                    Intent i = new Intent(SplashActivity.this, MainActivity.class);
+                    //Intent i = new Intent(SplashActivity.this, MainActivity.class);
+                    Intent i = new Intent(SplashActivity.this, BluetoothActivity.class);
                     //i.putExtra(Constant.USER, user);
                     startActivity(i);
                     finish();
