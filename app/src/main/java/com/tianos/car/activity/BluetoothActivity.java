@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.Set;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import utils.Util;
 
@@ -38,6 +39,8 @@ public class BluetoothActivity extends BaseActivity implements NavigationView.On
     @BindView(R.id.btnPaired)
     Button btnPaired;
 
+
+    @BindView(R.id.devicelist)
     ListView devicelist;
 
     //Bluetooth
@@ -118,7 +121,6 @@ public class BluetoothActivity extends BaseActivity implements NavigationView.On
         final ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1, list);
         devicelist.setAdapter(adapter);
         devicelist.setOnItemClickListener(myListClickListener); //Method called when the device from the list is clicked
-
     }
 
     private AdapterView.OnItemClickListener myListClickListener = new AdapterView.OnItemClickListener()

@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import utils.Util;
 
@@ -49,6 +50,8 @@ public class TivaActivity extends BaseActivity implements NavigationView.OnNavig
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        /*
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +60,8 @@ public class TivaActivity extends BaseActivity implements NavigationView.OnNavig
                         .setAction("Action", null).show();
             }
         });
+        */
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -64,6 +69,9 @@ public class TivaActivity extends BaseActivity implements NavigationView.OnNavig
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        ButterKnife.bind(this);
     }
 
     @OnClick(R.id.button1)
@@ -82,6 +90,8 @@ public class TivaActivity extends BaseActivity implements NavigationView.OnNavig
             {
                 Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
             }
+        } else {
+            Toast.makeText(getApplicationContext(), "Le diste click al boton, pero la variable 'btSocket' es null", Toast.LENGTH_LONG).show();
         }
     }
 
